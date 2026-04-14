@@ -6,7 +6,7 @@ app = FastAPI()                             # importamos fastapi como una variab
 async def first_api():                      # async (asynchronous) no es necesario para fastapi
     return{"message": "Hello!"}
 
-# uvicorn Books:app --reload
+# uvicorn books:app --reload
 # http://127.0.0.1:8000
 # http://127.0.0.1:8000/docs 
 # http://127.0.0.1:8000/redoc
