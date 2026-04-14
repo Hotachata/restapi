@@ -17,15 +17,15 @@ books = [
     {'title': 'Title Three', 'author': 'Author Three', 'category': 'history'},
     {'title': 'Title Four', 'author': 'Author Four', 'category': 'math'},
     {'title': 'Title Five', 'author': 'Author Five', 'category': 'math'},
-    {'title': 'Title Six', 'author': 'Author Two', 'category': 'math'}
+    {'title': 'Project Hail Mary', 'author': 'Andy Weir', 'category': 'science fiction'}
 ]
 
 @app.get("/books")
 async def get_all_books():
     return books
 
-@app.get("/books/{book_title}")                             # path parameter
+@app.get("/books/{book_title}")                                         # path parameter
 async def get_book_with_title(book_title: str):
     for book in books:
-        if book.get('title').casefold() == book_title:      # .casefold() forces lower case
-            return book                                     # return the book in the path param
+        if book.get('title').casefold() == book_title.casefold():       # .casefold() forces lower case
+            return book                                                 # return the book in the path param
